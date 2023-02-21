@@ -3,9 +3,9 @@
 namespace App\Calculator;
 
 use App\Entity\Product;
-use Symfony\Component\DependencyInjection\Attribute\AutoconfigureTag;
+use Symfony\Component\DependencyInjection\Attribute\AsTaggedItem;
 
-#[AutoconfigureTag('app.calculator', ['category' => 'all'])]
+#[AsTaggedItem('all')]
 final class GenericCalculator implements ProductPriceCalculatorInterface
 {
     public function calculate(Product $product, int $quantity): int
