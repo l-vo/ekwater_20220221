@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MoviesController!{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <h1>{{ movie.title }}</h1>
+    {% if movie.poster starts with 'http' %}
+        {% set poster_path = movie.poster %}
+    {% else %}
+        {% set poster_path = asset('build/images/' ~ movie.poster) %}
+    {% endif %}
+    <img src="{{ poster_path }}" />
+    <ul>
+        <li><strong>Released at: </strong>{{ movie.released|format_date('full') }}</li>
+        <li><strong>Genres: </strong>{{ movie.genreNames|join(', ') }}</li>
+        <li><strong>Country: </strong>{{ movie.country|country_name }}</li>
+        {% if movie.price is not null %}
+        <li><strong>Price: </strong>{{ movie.price|format_number({fraction_digit: 2}) }} €</li>
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}

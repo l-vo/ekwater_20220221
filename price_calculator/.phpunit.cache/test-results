@@ -1,0 +1,1 @@
+{"version":1,"defects":{"App\\Tests\\PriceCalculatorTest::testTechProduct":7},"times":{"App\\Tests\\PriceCalculatorTest::testGenericProduct":0.09,"App\\Tests\\PriceCalculatorTest::testSportProduct":0,"App\\Tests\\PriceCalculatorTest::testTechProduct":0}}
