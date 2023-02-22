@@ -26,8 +26,8 @@ class MoviesController extends AbstractController
         ]);
     }
 
-    #[Route('/movies/add', name: 'app_movies_add', methods: ['GET', 'POST'])]
-    #[Route('/movies/edit/{slug}', name: 'app_movies_edit', methods: ['GET', 'POST'])]
+    #[Route('/admin/movies/add', name: 'app_movies_add', methods: ['GET', 'POST'])]
+    #[Route('/admin/movies/edit/{slug}', name: 'app_movies_edit', methods: ['GET', 'POST'])]
     public function addMovie(Request $request, MovieRepository $movieRepository, ?Movie $movie): Response
     {
         $form = $this->createForm(MovieType::class, $movie);
